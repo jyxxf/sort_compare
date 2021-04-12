@@ -3,5 +3,5 @@
 void get_time(void) {
 	struct timeb timenow;
 	ftime(&timenow);
-	printf("%ds %dms\n", timenow.time, timenow.millitm);
+	printf("%llds %dms\n", timenow.time, timenow.millitm);
 }
