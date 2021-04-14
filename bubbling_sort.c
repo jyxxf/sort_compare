@@ -1,4 +1,5 @@
-#include <stdlib.h>
+#include "sort.h"
+
 void bubbling_sort(int origin[], size_t length) {
 	int temp;
 	for(size_t i=1;i<length;i++){

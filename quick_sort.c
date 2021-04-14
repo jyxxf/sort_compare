@@ -1,5 +1,4 @@
-#include <stdlib.h>
-
+#include "sort.h"
 void quick_sort(int origin[], size_t length) {
 	if (length == 1||length==0)return;
 	size_t tail = length-1;

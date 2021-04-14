@@ -1,18 +1,8 @@
-#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/timeb.h>
 #include <string.h>
-
-#define size 50000
-
-extern get_time();
-extern time_gap();
-extern insert_sort();
-extern bubbling_sort();
-extern quick_sort();
-
-struct timeb timenow;
+#include "sort.h"
+#define size 10000
 
 int main() {
     srand(time(NULL));
@@ -39,4 +29,21 @@ int main() {
     quick_sort(quick, size);
     time_gap(&timenow);
     return 0;
+}
+
+
+void get_time(struct timeb* timenow) {
+    ftime(timenow);
+}
+
+void time_gap(struct timeb* timebefore) {
+    struct timeb timenow;
+    ftime(&timenow);
+    printf("gap time is %lldms\n", (timenow.time - timebefore->time) * 1000 + timenow.millitm - timebefore->millitm);
+}
+
+void swap(int* a, int* b) {
+    int temp = (*a);
+    *a = *b;
+    *b = temp;
 }
