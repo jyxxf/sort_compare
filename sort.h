@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <sys/timeb.h>
 #include <stdio.h>
+#include <time.h>
 
 struct timeb timenow;
 

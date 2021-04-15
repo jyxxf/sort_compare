@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sort.h"
 
-#define size 30
+#define size 40000
 
 int main() {
 
@@ -12,7 +12,7 @@ int main() {
     for (size_t i = 0;i < size;i++) {
         origin[i] = rand();
     }
-    
+
     int selection[size];
     memcpy(selection, origin, sizeof(origin));
     get_time(&timenow);
