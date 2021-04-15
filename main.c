@@ -2,15 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 #include "sort.h"
-#define size 10000
+
+#define size 30
 
 int main() {
+
     srand(time(NULL));
     int origin[size];
     for (size_t i = 0;i < size;i++) {
         origin[i] = rand();
     }
     
+    int selection[size];
+    memcpy(selection, origin, sizeof(origin));
+    get_time(&timenow);
+    selection_sort(selection, size);
+    time_gap(&timenow);
+
     int insert[size];
     memcpy(insert, origin, sizeof(origin));
     get_time(&timenow);
@@ -22,15 +30,16 @@ int main() {
     get_time(&timenow);
     bubbling_sort(bubbling, size);
     time_gap(&timenow);
-    
+
     int quick[size];
     memcpy(quick, origin, sizeof(origin));
     get_time(&timenow);
     quick_sort(quick, size);
     time_gap(&timenow);
+    
     return 0;
-}
 
+}
 
 void get_time(struct timeb* timenow) {
     ftime(timenow);
