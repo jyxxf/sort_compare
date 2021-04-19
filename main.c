@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sort.h"
 
-#define size 40000
+#define size 40
 
 int main() {
 
@@ -36,7 +36,7 @@ int main() {
     get_time(&timenow);
     quick_sort(quick, size);
     time_gap(&timenow);
-    
+
     return 0;
 
 }
@@ -55,4 +55,10 @@ void swap(int* a, int* b) {
     int temp = (*a);
     *a = *b;
     *b = temp;
+}
+
+void printall(int array[], size_t length) {
+    for (size_t i=0;i < length;i++) {
+        printf("%d\n", array[i]);
+    }
 }
