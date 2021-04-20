@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sort.h"
 
-#define size 40
+#define size 10
 
 int main() {
 
@@ -19,17 +19,18 @@ int main() {
     selection_sort(selection, size);
     time_gap(&timenow);
 
+    int bubbling[size];
+    memcpy(bubbling, origin, sizeof(origin));
+    get_time(&timenow);
+    bubbling_sort(bubbling, size);
+    time_gap(&timenow);
+
     int insert[size];
     memcpy(insert, origin, sizeof(origin));
     get_time(&timenow);
     insert_sort(insert, size);
     time_gap(&timenow);
 
-    int bubbling[size];
-    memcpy(bubbling, origin, sizeof(origin));
-    get_time(&timenow);
-    bubbling_sort(bubbling, size);
-    time_gap(&timenow);
 
     int quick[size];
     memcpy(quick, origin, sizeof(origin));
@@ -37,8 +38,16 @@ int main() {
     quick_sort(quick, size);
     time_gap(&timenow);
 
-    return 0;
+    int merge[size];
+    memcpy(merge, origin, sizeof(origin));
+    get_time(&timenow);
+    int* result = (int*)malloc(size * sizeof(int));
+    merge_sort(merge, 0, size - 1, result);
+    time_gap(&timenow);
+    printall(result, size);
+    free(result);
 
+    return 0;
 }
 
 void get_time(struct timeb* timenow) {
