@@ -4,6 +4,7 @@
 #include "sort.h"
 
 #define size 10
+int test[10] = { 5,123,9,0,55,222,7,64,64,85 };
 
 int main() {
 
@@ -42,7 +43,7 @@ int main() {
     memcpy(merge, origin, sizeof(origin));
     get_time(&timenow);
     int* result = (int*)malloc(size * sizeof(int));
-    merge_sort(merge, 0, size - 1, result);
+    merge_sort(test, 0, size - 1, result);
     time_gap(&timenow);
     printall(result, size);
     free(result);
