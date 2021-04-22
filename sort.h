@@ -16,7 +16,7 @@ void selection_sort(int array[], size_t length);
 void merge_sort(int array[], size_t start_index, size_t end_index, int result[]);
 
 void get_time(struct timeb* timenow);
-void time_gap(struct timeb* timebefore);
+void time_gap(struct timeb* timebefore, char* str);
 void swap(int* a, int* b);
 void printall(int array[], size_t length);
 
