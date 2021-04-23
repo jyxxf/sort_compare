@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sort.h"
 
-#define size 50000
+#define size 10000
 int test[10] = { 5,123,9,0,55,222,7,64,64,85 };
 
 int main() {

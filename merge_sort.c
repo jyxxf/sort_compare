@@ -1,6 +1,7 @@
 #include "sort.h"
 
 void merge(int array[], size_t start_index, size_t second_half_index, size_t end_index, int result[]);
+
 /*
 void merge_sort(int array[], size_t start_index,size_t end_index,int result[]) {
 	if (end_index - start_index >= 2) {
