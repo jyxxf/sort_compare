@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sort.h"
 
-#define size 20000
+#define size 2000
 int test[10] = { -8,123,-9,0,55,222,7,64,64,85 };
 
 int main() {
@@ -46,6 +46,10 @@ int main() {
     time_gap(&timenow,"merge");
     free(result);
 
+    int radix[size];
+    memcpy(radix, origin, sizeof(origin));
+    get_time(&timenow);
+    radix_sort(radix, size);
     return 0;
 }
 
