@@ -14,6 +14,7 @@ void insert_sort(int array[], size_t length);
 void quick_sort(int origin[], size_t length);
 void selection_sort(int array[], size_t length);
 void merge_sort(int array[], size_t start_index, size_t end_index, int result[]);
+void radix_sort(int array[], size_t length);
 
 void get_time(struct timeb* timenow);
 void time_gap(struct timeb* timebefore, char* str);
